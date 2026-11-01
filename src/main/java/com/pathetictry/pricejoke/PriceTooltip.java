@@ -30,7 +30,9 @@ final class PriceTooltip {
     static void apply(ItemStack stack, List<Component> lines) {
         Long price = PriceStore.get(BuiltInRegistries.ITEM.getKey(stack.getItem()).toString());
         if (price == null) return;
-        String repl = PriceFormat.format(price);
+        // The price you set is per item; a stack shows price x count (capped, no overflow).
+        long count = Math.max(1, stack.getCount());
+        String repl = PriceFormat.format(price > Long.MAX_VALUE / count ? Long.MAX_VALUE : price * count);
 
         for (int i = 0; i < lines.size(); i++) {
             List<Part> parts = new ArrayList<>();

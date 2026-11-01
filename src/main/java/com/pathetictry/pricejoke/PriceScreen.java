@@ -143,7 +143,7 @@ public class PriceScreen extends Screen {
 
         Tab[] tabs = Tab.values();
         for (int i = 0; i < tabs.length; i++) {
-            btn(g, gx + i * 54, y0 + 38, 50, 14, tabs[i].label, tabs[i] == tab);
+            btn(g, gx + i * 42, y0 + 38, 38, 14, tabs[i].label, tabs[i] == tab);
         }
 
         // Item grid
@@ -195,7 +195,7 @@ public class PriceScreen extends Screen {
         // Editor row
         g.fill(gx, by, gx + SLOT - 1, by + SLOT - 1, SLOTBG);
         if (selected != null) g.renderItem(selected.stack(), gx + 1, by + 1);
-        String sel = selected == null ? "No item selected" : selected.name();
+        String sel = selected == null ? "Pick an item" : selected.name();
         g.drawString(font, font.plainSubstrByWidth(sel, 70), gx + 22, by + 4, selected == null ? GRAY : WHITE, false);
         box(g, gx + 96, by, 64, 16, BLACK);
         btn(g, gx + 164, by, 30, 16, "SET", false);
@@ -220,7 +220,7 @@ public class PriceScreen extends Screen {
 
         Tab[] tabs = Tab.values();
         for (int i = 0; i < tabs.length; i++) {
-            if (in(mx, my, gx + i * 54, y0 + 38, 50, 14)) {
+            if (in(mx, my, gx + i * 42, y0 + 38, 38, 14)) {
                 tab = tabs[i];
                 gridScroll = 0;
                 refilter();
