@@ -33,7 +33,7 @@ public class PriceScreen extends Screen {
     private int x0, y0, gx, gy, rx, rw, by;
 
     public PriceScreen() {
-        super(Component.literal("Price Joker"));
+        super(Component.literal("Fake Price"));
     }
 
     @Override
@@ -135,7 +135,7 @@ public class PriceScreen extends Screen {
     public void render(GuiGraphics g, int mx, int my, float pt) {
         g.fill(0, 0, width, height, 0xA0000000);
         box(g, x0, y0, PW, PH, PANEL);
-        g.drawString(font, "Price Joker", x0 + 8, y0 + 6, WHITE, false);
+        g.drawString(font, "Fake Price", x0 + 8, y0 + 6, WHITE, false);
         String note = "screen only";
         g.drawString(font, note, x0 + PW - 8 - font.width(note), y0 + 6, GRAY, false);
 
