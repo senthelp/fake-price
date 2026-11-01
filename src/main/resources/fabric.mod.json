@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "id": "pricejoke",
+  "version": "${version}",
+  "name": "Price Joker",
+  "description": "Client-side joke mod. Changes item price text on your own screen only.",
+  "authors": ["PatheticTry"],
+  "license": "MIT",
+  "environment": "client",
+  "entrypoints": {
+    "client": ["com.pathetictry.pricejoke.PriceJokeClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.18.6",
+    "minecraft": "~1.21.11",
+    "java": ">=21",
+    "fabric-api": "*"
+  }
+}
